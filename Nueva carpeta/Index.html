@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>MDX - Modern mexican Cuisine</title>
+    <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/63d8208ff7ae9a67e9c7921b/ce2e3cea-303f-4183-a806-116a7175ee07/favicon.ico?format=100w">
+    <link rel="stylesheet" type="text/css" href="styles.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+  </head>
+  <header>
+<!--Desktop-->
+    <div class="desktop">
+      <div class="title">
+        <img class="logo" src="//images.squarespace-cdn.com/content/v1/63d8208ff7ae9a67e9c7921b/b7a551a2-3a00-4f96-8f6a-e52ae7610b4a/logo_tagline_MXD_blanco.png?format=1500w" alt="MXD - Modern Mexican Cuisine">
+      </div>
+      <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Menu</a>        
+        <a href="#">Contatco y hora</a>
+        <a href="#">Localidades</a>
+      </div>
+    </div>
+<!--Phone-->
+ 
+  </header>
+  <body>
+      <div class="inicio">
+      <div class="Plato" id="platoDiv">
+        <p class="Plato-name">CAMARONES AL AJILLO</p>
+        <p class="Descripcion"> GAMBAS PELADAS, AJO Y ACEITE DE OLIVA</p>
+        <h2 class="Precio-tachado">$13.99</h2>
+        <h1 class="Precio">$9.99</h1>
+      </div>
+        <img class="plato-img" id="platoImg" src="./img-de-prueba/plato-vendido.png" alt="Comida">
+      </div>
+      <div class="centro-pag">
+      <h1 class="txt">Nuestra historia</h1>
+      <h3 class="historia">MDX - Modern Mexican Cuisine is a family owned restaurant bringing traditional authentic Mexican dishes to metro Atlanta.</h3>  
+      <a class="menu" href="Menu.html">Menu</a>
+      <h1 class="txt">Fotos del lugar</h1>
+        <div class="collage-img">
+          <div class="img">
+            <picture>
+              <img class="lugar-img" src="./img-de-prueba/lugar-fondo.avif" alt="lugar" style="width: 100%;">
+            </picture> 
+          </div>
+          <div class="img">
+            <picture>
+              <img src="./img-de-prueba/d78a2e82-c85f-4936-9008-3c96aa1759b3.avif" alt="fondo" style="width: 100%;">
+            </picture>
+          </div>
+          <div class="img">
+            <picture>
+              <img src="./img-de-prueba/b23bbdc8-a4d3-46d9-8221-c13680b57668.avif" alt="fondo" style="width: 100%;">
+            </picture>
+          </div>
+          <div class="img">
+            <picture>
+              <img src="./img-de-prueba/f6f16692-f761-45bf-8e27-cac75cc3744e.avif" alt="fondo" style="width: 100%;">
+            </picture>
+          </div>
+          <div class="img">
+            <picture>
+              <img src="./img-de-prueba/795e6f15-8195-493f-afc8-70c670789ff6.avif" alt="fondo" style="width: 100%;">
+            </picture>
+          </div>
+          <div class="img">
+            <picture>
+              <img src="./img-de-prueba/a9e24325-58c2-410a-833d-51dd7215eccd.avif" alt="fondo" style="width: 100%;">
+            </picture>
+          </div>
+        </div>
+      <h1 class="txt">Video canvas</h1>
+        <iframe width="50%" height="500px" src="https://www.youtube-nocookie.com/embed/MEp6IjYQBeU?feature=oembed&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" title="Estos famosos han visitado el restaurante Mamá por Dios | Noticias Telemundo" id="yui_3_17_2_1_1725939098275_104"></iframe>
+      </div>
+      
+
+
+
+
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+    </div>      
+    </body>
+
+    
+    <script>
+// Seleccionamos todos los elementos de la galería y el lightbox
+const galleryImages = document.querySelectorAll('.collage-img .img img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+const header = document.querySelector('header'); // Seleccionamos el header
+
+// Añadimos un evento "click" a cada imagen de la galería
+galleryImages.forEach((image) => {
+  image.addEventListener('click', function() {
+    lightbox.style.display = 'flex'; // Muestra el lightbox
+    lightboxImg.src = this.src; // Muestra la imagen seleccionada en el lightbox
+    header.style.display = 'none'; // Oculta el header cuando se muestra el lightbox
+  });
+});
+
+// Evento para cerrar el lightbox
+closeBtn.addEventListener('click', function() {
+  lightbox.style.display = 'none'; // Oculta el lightbox
+  header.style.display = 'block'; // Muestra el header de nuevo cuando se cierra el lightbox
+});
+
+// También puedes cerrar el lightbox si haces click fuera de la imagen
+lightbox.addEventListener('click', function(e) {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none'; // Oculta el lightbox
+    header.style.display = 'block'; // Muestra el header de nuevo cuando se cierra el lightbox
+  }
+});
+
+    </script>
+    
+    <script>
+      let lastScrollTop = 0; // Almacena la última posición del scroll
+      const platoDiv = document.getElementById('platoDiv'); // El div que contiene el nombre y precio del plato
+      const platoImg = document.getElementById('platoImg'); // La imagen del plato
+    
+      // Función para mover los divs hacia los lados
+      function moveDivs() {
+        platoDiv.classList.add('move-left');  // Mueve el div del nombre del plato hacia la izquierda
+        platoImg.classList.add('move-right'); // Mueve la imagen del plato hacia la derecha
+      }
+    
+      // Función para regresar los divs a su posición original
+      function resetDivs() {
+        platoDiv.classList.remove('move-left'); // Regresa el div del nombre del plato
+        platoImg.classList.remove('move-right'); // Regresa la imagen del plato
+      }
+    
+      // Detectar el evento de scroll
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY; // Posición actual del scroll
+    
+        // Si el usuario hace scroll hacia abajo
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          moveDivs(); // Mueve los elementos
+        } 
+        // Si el usuario hace scroll hacia arriba
+        else if (scrollTop < lastScrollTop && scrollTop < 100) {
+          resetDivs(); // Regresa los elementos
+        }
+    
+        lastScrollTop = scrollTop; // Actualiza la posición del scroll
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll('.collage-img .img'); // Selecciona todos los elementos con la clase
+
+  window.addEventListener('scroll', function () {
+    elements.forEach(function (element) {
+      const position = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (position < windowHeight - 100) { // Cuando el elemento está casi completamente en pantalla
+        element.classList.add('visible'); // Añade la clase visible cuando entra en pantalla
+      } else {
+        element.classList.remove('visible'); // Remueve la clase si el elemento sale de pantalla
+      }
+    });
+  });
+});
+
+    </script>
+    <script>
+      window.onscroll = function() {
+          var header = document.querySelector("header");
+          if (window.scrollY > 50) { // Si el scroll es mayor a 50px
+              header.classList.add("scrolled");
+          } else {
+              header.classList.remove("scrolled");
+          }
+      };
+      </script>
+      
+</html>
