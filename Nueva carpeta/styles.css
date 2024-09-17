@@ -204,3 +204,52 @@ header.scrolled {
     padding: 1% 10% 1% 10%;
     text-decoration: none;
 }
+
+.pie.de.pagina {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.pie.de.pagina .redes a{
+    margin: 10px;
+}
+
+.localidad a{
+    text-decoration: none;
+    padding: 10px;
+    font-style: italic;
+    color: black;
+}
+.localidad a div{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.localidad a div svg{
+    margin-right: 5px;
+}
+.wave{
+    margin-bottom: -100px;
+}
+.localidad.y.horarios .horarios h3{
+    font-weight: 200;
+}
+.footer.alex.android{
+    border-top: rgb(0, 0, 0) 1px solid;
+    margin: 0px 10% 10px 10%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.footer.alex.android div a{
+    text-decoration: none;
+    display: flex;
+    color: black;
+    margin: 0px 15px 0px 15px;
+    align-items: center;
+}
